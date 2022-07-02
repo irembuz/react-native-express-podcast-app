@@ -5,14 +5,14 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <View>
+        <View style={styles.logo}>
           <Image
             style={styles.imageStyle}
             source={require("../assets/images/project_logo.svg")}
           />
           <Text style={styles.title}>pcast</Text>
         </View>
-        <Text style={styles.title}>Episodic series of digital audio</Text>
+        <Text style={styles.text}>Episodic series of digital audio</Text>
 
         <TextInput style={styles.input} placeholder="E-mail address" />
         <TextInput
@@ -37,25 +37,32 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
   },
+  logo: {
+    flexDirection: "row",
+  },
   title: {
     fontSize: 36,
     color: "#FFFFFF",
     fontWeight: "800",
     marginBottom: 16,
   },
+  text: {
+    fontSize: 24,
+    fontWeight: "500",
+    color: "#FFFFFF",
+  },
   contentContainer: {
     padding: 32,
   },
   input: {
+    backgroundColor: "#09121C",
     fontSize: 15,
     marginTop: 16,
     paddingHorizontal: 16,
     paddingVertical: 14,
-    borderRadius: 6,
+    borderRadius: 16,
   },
-  buttonsContainer: {
-    backgroundColor: "#3369FF",
-  },
+  buttonsContainer: {},
 });
 
 export default Login;
