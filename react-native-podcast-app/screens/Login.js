@@ -1,11 +1,19 @@
 import React from "react";
-import { Text, View, StyleSheet, TextInput, Button } from "react-native";
+import { Text, View, StyleSheet, TextInput, Button, Image } from "react-native";
 
 const Login = () => {
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <Text style={styles.title}>pcast</Text>
+        <View>
+          <Image
+            style={styles.imageStyle}
+            source={require("../assets/images/project_logo.svg")}
+          />
+          <Text style={styles.title}>pcast</Text>
+        </View>
+        <Text style={styles.title}>Episodic series of digital audio</Text>
+
         <TextInput style={styles.input} placeholder="E-mail address" />
         <TextInput
           style={styles.input}
@@ -23,10 +31,15 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#09121C",
+  },
+  imageStyle: {
+    width: 64,
+    height: 64,
   },
   title: {
     fontSize: 36,
+    color: "#FFFFFF",
     fontWeight: "800",
     marginBottom: 16,
   },
