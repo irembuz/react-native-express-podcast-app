@@ -1,17 +1,13 @@
 import React from "react";
-import { Text, View, StyleSheet, TextInput, Button, Image } from "react-native";
+import { Text, View, StyleSheet, TextInput, Button } from "react-native";
+
+import Logo from "../components/Logo";
 
 const Login = () => {
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <View style={styles.logo}>
-          <Image
-            style={styles.imageStyle}
-            source={require("../assets/images/project_logo.svg")}
-          />
-          <Text style={styles.title}>pcast</Text>
-        </View>
+        <Logo />
         <Text style={styles.text}>Episodic series of digital audio</Text>
 
         <TextInput style={styles.input} placeholder="E-mail address" />
@@ -20,9 +16,7 @@ const Login = () => {
           placeholder="Password"
           secureTextEntry
         />
-        <View style={styles.buttonsContainer}>
-          <Button title="Login" />
-        </View>
+        <Button title="Login" />
       </View>
     </View>
   );
@@ -32,19 +26,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#09121C",
-  },
-  imageStyle: {
-    width: 64,
-    height: 64,
-  },
-  logo: {
-    flexDirection: "row",
-  },
-  title: {
-    fontSize: 36,
-    color: "#FFFFFF",
-    fontWeight: "800",
-    marginBottom: 16,
   },
   text: {
     fontSize: 24,
@@ -62,7 +43,6 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 16,
   },
-  buttonsContainer: {},
 });
 
 export default Login;
