@@ -1,21 +1,20 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import Login from "./screens/Login";
+import BrowsePodcast from "./screens/BrowsePodcast";
 
-export default function App() {
+const MainStack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Login />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <MainStack.Navigator headerMode="none" mode="model">
+        <MainStack.Screen name="Login" component={Login} />
+        <MainStack.Screen name="BrowsePodcast" component={BrowsePodcast} />
+      </MainStack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-  },
-});
+export default App;

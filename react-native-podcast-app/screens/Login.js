@@ -1,10 +1,13 @@
 import React from "react";
 import { Text, View, StyleSheet, Pressable } from "react-native";
 import { TextInput } from "react-native-paper";
+import { useNavigation } from "@react-navigation/core";
 
 import Logo from "../components/Logo";
 
 const Login = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
@@ -13,7 +16,7 @@ const Login = () => {
         <TextInput
           style={styles.input}
           placeholder="E-mail address"
-          mode='outlined'
+          mode="outlined"
           left={<TextInput.Icon name="email" color="#898F97" />}
           theme={{
             colors: {
@@ -25,7 +28,7 @@ const Login = () => {
         <TextInput
           style={styles.input}
           placeholder="Password"
-          mode='outlined'
+          mode="outlined"
           secureTextEntry
           left={<TextInput.Icon name="key" color="#898F97" />}
           theme={{
@@ -36,7 +39,10 @@ const Login = () => {
           }}
         />
         {/* Login Button */}
-        <Pressable style={styles.button}>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("BrowsePodcast")}
+        >
           <Text style={styles.buttonText}>Login</Text>
         </Pressable>
       </View>
