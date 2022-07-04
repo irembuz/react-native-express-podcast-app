@@ -11,7 +11,7 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <Logo />
+        <Logo imageStyle={styles.logoImage} titleStyle={styles.logoTitle} />
         <Text style={styles.text}>Episodic series of digital audio</Text>
         <TextInput
           style={styles.input}
@@ -70,6 +70,16 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     height: 30,
     backgroundColor: "value",
+  },
+  logoImage: {
+    width: 58,
+    height: 58,
+  },
+  logoTitle: {
+    fontSize: 32,
+    color: "#FFFFFF",
+    fontWeight: "800",
+    marginBottom: 16,
   },
   button: {
     alignItems: "center",
