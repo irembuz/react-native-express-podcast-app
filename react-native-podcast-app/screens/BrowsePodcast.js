@@ -2,6 +2,7 @@ import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Searchbar } from "react-native-paper";
 
+import BrowseTabs from "../components/BrowseTabs";
 import Logo from "../components/Logo";
 
 const BrowsePodcast = () => {
@@ -21,6 +22,7 @@ const BrowsePodcast = () => {
           }}
         />
       </View>
+      <BrowseTabs />
     </View>
   );
 };
