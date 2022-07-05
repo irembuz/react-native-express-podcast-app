@@ -11,6 +11,22 @@ const BrowseTabs = () => {
         iconName: "library-music",
         text: "Categories",
       },
+      {
+        iconName: "panorama-photosphere",
+        text: "Topics",
+      },
+      {
+        iconName: "tag-faces",
+        text: "Authors",
+      },
+      {
+        iconName: "mic",
+        text: "Podcasts",
+      },
+      {
+        iconName: "library-books",
+        text: "Episodes",
+      },
     ];
     setTabs([...initialValue]);
   }, []);
@@ -20,7 +36,7 @@ const BrowseTabs = () => {
   }, [tabs]);
 
   return (
-    <View>
+    <View style={styles.container}>
       {tabs.map((item, index) => (
         <TouchableOpacity key={index} style={styles.browseTabs}>
           <View style={styles.tabs} onPress>
@@ -34,6 +50,9 @@ const BrowseTabs = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+  },
   browseTabs: {
     marginLeft: 24,
   },
