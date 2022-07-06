@@ -1,28 +1,33 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { Searchbar } from "react-native-paper";
 
 import BrowseTabs from "../components/BrowseTabs";
 import Logo from "../components/Logo";
+import PodcastList from "../components/PodcastList";
 
 const BrowsePodcast = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.contentContainer}>
-        <Logo imageStyle={styles.logoImage} titleStyle={styles.logoTitle} />
-        <Text style={styles.text}>Browse</Text>
-        <Searchbar
-          style={styles.searchbar}
-          placeholder="Search"
-          theme={{
-            colors: {
-              text: "#898F97",
-              placeholder: "#898F97",
-            },
-          }}
-        />
-      </View>
+        <ScrollView
+          style={styles.scrollViewStyle}
+          contentContainerStyle={styles.scrollViewContentContainerStyle}
+        >
+          <Logo imageStyle={styles.logoImage} titleStyle={styles.logoTitle} />
+          <Text style={styles.text}>Browse</Text>
+          <Searchbar
+            style={styles.searchbar}
+            placeholder="Search"
+            theme={{
+              colors: {
+                text: "#898F97",
+                placeholder: "#898F97",
+              },
+            }}
+          />
+        </ScrollView>
       <BrowseTabs />
+      <PodcastList />
     </View>
   );
 };
@@ -31,9 +36,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#09121C",
-  },
-  contentContainer: {
-    padding: 32,
   },
   text: {
     fontSize: 48,

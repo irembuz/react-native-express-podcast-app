@@ -31,10 +31,6 @@ const BrowseTabs = () => {
     setTabs([...initialValue]);
   }, []);
 
-  useEffect(() => {
-    console.log(tabs);
-  }, [tabs]);
-
   return (
     <View style={styles.container}>
       {tabs.map((item, index) => (
