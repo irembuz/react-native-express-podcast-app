@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import {
-  Image,
   StyleSheet,
   View,
   TouchableOpacity,
   Text,
   ImageBackground,
-  ScrollView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/core";
 import { Ionicons } from "@expo/vector-icons";
 
 const PodcastList = () => {
+  const navigation = useNavigation();
+
   const [podcasts, setPodcasts] = useState([]);
 
   useEffect(() => {
@@ -31,7 +32,10 @@ const PodcastList = () => {
     <View>
       <Text style={styles.text}>Podcasts({podcasts.length})</Text>
       {podcasts.map((item, index) => (
-        <TouchableOpacity key={index}>
+        <TouchableOpacity
+          key={index}
+          onPress={() => navigation.navigate("PodcastScreen")}
+        >
           <ImageBackground
             source={item.imageSource}
             style={styles.imageBackground}
@@ -61,8 +65,8 @@ const styles = StyleSheet.create({
     height: 180,
     width: "90%",
     opacity: 0.8,
-    marginBottom:30,
-    marginLeft:35,
+    marginBottom: 30,
+    marginLeft: 35,
   },
   icon: {
     position: "absolute",
